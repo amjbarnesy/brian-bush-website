@@ -37,37 +37,37 @@ const services: { Icon: IconComponent; title: string; description: string; id?: 
     Icon: Brain,
     title: 'Coaching',
     description:
-      'Get out of your own way. For leaders, founders, and people navigating big change. Direct, human, built entirely around what you actually need — not a generic programme.',
+      "We all have areas where we feel stuck, uncertain, or out of our depth. Sometimes we've been promoted without being properly prepared. Sometimes we're managing people or running a business without ever having been trained to do so. Sometimes we simply can't see a way forward because we're too close to the problem. I've coached people through difficult personal circumstances, leadership challenges, lack of self-belief, major life changes, and environments that were holding them back. My approach is direct, human, and entirely focused on what the individual actually needs — not a generic programme or a one-size-fits-all process.",
   },
   {
     Icon: TrendingUp,
-    title: 'Commercial strategy',
+    title: 'Commercial Strategy & Business Development',
     description:
-      'Clarity on what you offer, who needs it, and why they should care. Strategy that actually gets delivered, not just documented. Through my network I can open doors to markets and decision-makers.',
+      "I work with leadership teams and boards to get absolute clarity on what they offer, who they should be offering it to, and why those people should care. Strategy without execution is just a document. I help organisations develop a clear sense of purpose that both customers and employees can genuinely align with — and then I help deliver it. Through my network I can open doors to markets, sectors, companies, and individuals. If you have a target list of prospective customers, the chances are I already know some of them. That makes the introduction easy, natural, and built on existing trust.",
   },
   {
     Icon: Network,
-    title: 'People connection',
+    title: 'People Connection',
     description:
-      'A large global network built over decades. Warm introductions to the exact people your business needs to know. If you have a target list, the chances are I already know some of them.',
+      "I have been connecting people for as long as I can remember — long before it had a professional label attached to it. I have a natural ability to recognise how two people should know one another and what becomes possible when they do. I connect individuals to opportunity. I connect businesses to one another. I connect charities to commercial partners. I connect sectors — education to healthcare, for example — where synergies exist but the right introduction has never been made. Sometimes there's a direct commercial application. Sometimes it's simply that two human beings will be better for knowing each other. Either way, I make the connection.",
   },
   {
     Icon: GraduationCap,
-    title: 'Learning & development',
+    title: 'Learning & Development',
     description:
-      'Engaging sessions across hard technical skills and the softer skills that are harder to measure but equally important. Different people learn differently — I meet them where they are.',
+      "Growth doesn't stop the moment we leave education — or at least it shouldn't. Yet for many people, formal learning does stop, and with it the ability to adapt, evolve, and deal confidently with new situations. I deliver learning and development sessions across a wide range of organisations, covering both hard technical skills and the softer, more fluid skills that are often harder to measure but equally — if not more — important. My sessions are designed to be engaging, enjoyable, and built to actually stick. Different people learn at different speeds and in different ways, and it is my responsibility to meet them where they are.",
   },
   {
     Icon: LinkedinIcon,
-    title: 'LinkedIn & social',
+    title: 'Social Connection',
     description:
-      'Most people are using LinkedIn poorly. I help individuals, teams and boards build a credible presence and create content that attracts the right buyers. 600 million users — your audience is there.',
+      "LinkedIn is one of the most powerful professional platforms available, and most people are using it poorly. I have seen businesses misuse it entirely, salespeople pushing products nobody wants, and professionals who have a presence but zero engagement. I work with individuals, teams, and boards to help them understand the platform properly — how to build a credible presence, how to create content that resonates, and how to use LinkedIn strategically to attract the right buyers to their brand. With over 600 million users visible on the platform, your audience is there. The question is whether they can find you, and whether they like what they see when they do.",
   },
   {
     Icon: Mic,
     title: 'Speaking',
     description:
-      "Confident, humorous, and genuinely engaging. From team meetings to large conferences. People leave motivated, involved, and with something they didn't have before they arrived.",
+      "I am a confident, humorous, and engaging speaker who genuinely loves an audience — whether that's a small team meeting or a large conference. I have spoken and presented at events across the UK, hosted conferences, chaired sessions, and taken part in panel discussions. I work hard to make sure a room is motivated, involved, and walking away with something they did not have before they arrived. If you are looking for someone who will bring energy, substance, and a little bit of personality to your event, let's talk.",
     id: 'speaking',
   },
 ]

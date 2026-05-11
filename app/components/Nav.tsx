@@ -36,7 +36,7 @@ export default function Nav() {
         <nav
           className="flex items-center justify-between gap-4 rounded-full border px-3 py-2"
           style={{
-            background: scrolled || menuOpen ? 'rgba(34,34,34,0.98)' : 'rgba(34,34,34,0.85)',
+            background: scrolled || menuOpen ? 'rgba(34,34,34,0.82)' : 'rgba(34,34,34,0.55)',
             borderColor: 'rgba(255,255,255,0.08)',
             backdropFilter: 'blur(12px)',
             transition: prefersReducedMotion ? 'none' : 'background 0.3s ease',
@@ -118,7 +118,7 @@ export default function Nav() {
             transition={{ duration: 0.2, ease: 'easeOut' }}
             className="fixed top-24 left-4 right-4 z-40 rounded-2xl border overflow-hidden md:hidden"
             style={{
-              background: 'rgba(34,34,34,0.98)',
+              background: 'rgba(34,34,34,0.82)',
               borderColor: 'rgba(255,255,255,0.08)',
               backdropFilter: 'blur(12px)',
             }}

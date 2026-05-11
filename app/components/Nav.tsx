@@ -4,6 +4,7 @@ import { useEffect, useState } from 'react'
 import { AnimatePresence, motion, useReducedMotion } from 'framer-motion'
 import { useTheme } from 'next-themes'
 import { Sun, Moon } from 'lucide-react'
+import BBLogo from './BBLogo'
 
 const links = [
   { label: 'Overview', href: '#overview' },
@@ -56,11 +57,11 @@ export default function Nav() {
           <a
             href="#"
             className="flex items-center justify-center rounded-full px-4 py-2 shrink-0"
-            style={{ background: 'var(--bb-elevated)' }}
+            style={{ background: 'var(--bb-elevated)', color: 'var(--bb-text)' }}
             aria-label="Brian Bush, return to top"
             onClick={closeMenu}
           >
-            <BBMonogram />
+            <BBLogo height={24} />
           </a>
 
           {/* Desktop nav links */}
@@ -201,15 +202,3 @@ export default function Nav() {
   )
 }
 
-function BBMonogram() {
-  return (
-    <svg width="28" height="18" viewBox="0 0 28 18" fill="none" aria-hidden="true">
-      <rect x="0" y="0" width="11" height="18" rx="3" fill="#D4920A" opacity="0.9" />
-      <rect x="13" y="0" width="11" height="18" rx="3" fill="#D4920A" opacity="0.6" />
-      <rect x="2" y="5" width="7" height="2.5" rx="1.25" style={{ fill: 'var(--bb-bg)' }} />
-      <rect x="2" y="10.5" width="7" height="2.5" rx="1.25" style={{ fill: 'var(--bb-bg)' }} />
-      <rect x="15" y="5" width="7" height="2.5" rx="1.25" style={{ fill: 'var(--bb-bg)' }} />
-      <rect x="15" y="10.5" width="7" height="2.5" rx="1.25" style={{ fill: 'var(--bb-bg)' }} />
-    </svg>
-  )
-}

@@ -22,20 +22,16 @@ export default function About() {
 
   return (
     <section id="about" className="relative py-32 overflow-hidden" ref={ref}>
-      {/* Ambient warm glow */}
       <div
         className="absolute inset-0 pointer-events-none"
-        style={{
-          background:
-            'radial-gradient(ellipse at 50% 100%, rgba(212,146,10,0.08) 0%, transparent 70%)',
-        }}
+        style={{ background: 'radial-gradient(ellipse at 50% 100%, var(--bb-glow) 0%, transparent 70%)' }}
         aria-hidden="true"
       />
 
       <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-12">
         <motion.p
-          className="text-sm font-medium mb-6 tracking-widest uppercase"
-          style={{ color: 'rgba(255,255,255,0.3)', letterSpacing: '0.1em', fontSize: '12px' }}
+          className="font-medium mb-6 uppercase"
+          style={{ color: 'var(--bb-faint)', letterSpacing: '0.1em', fontSize: '12px' }}
           initial={{ opacity: 0, y }}
           animate={animate}
           transition={{ duration: 0.7, ease, delay: 0 }}
@@ -44,7 +40,8 @@ export default function About() {
         </motion.p>
 
         <motion.h2
-          className="section-heading text-white mb-10 max-w-2xl"
+          className="section-heading mb-10 max-w-2xl"
+          style={{ color: 'var(--bb-text)' }}
           initial={{ opacity: 0, y }}
           animate={animate}
           transition={{ duration: 0.7, ease, delay: 0.1 }}
@@ -57,7 +54,7 @@ export default function About() {
         <div className="max-w-2xl space-y-6">
           <motion.p
             className="text-base leading-relaxed"
-            style={{ color: '#AAAAAA' }}
+            style={{ color: 'var(--bb-muted)' }}
             initial={{ opacity: 0, y }}
             animate={animate}
             transition={{ duration: 0.7, ease, delay: 0.2 }}
@@ -70,14 +67,14 @@ export default function About() {
 
           <motion.p
             className="text-base leading-relaxed"
-            style={{ color: '#AAAAAA' }}
+            style={{ color: 'var(--bb-muted)' }}
             initial={{ opacity: 0, y }}
             animate={animate}
             transition={{ duration: 0.7, ease, delay: 0.3 }}
           >
             I have developed a large and active global network over many years. Warm introductions,
-            trusted referrals, and direct access to decision-makers. This is what separates a promising
-            idea from a real opportunity.
+            trusted referrals, and direct access to decision-makers. This is what separates a
+            promising idea from a real opportunity.
           </motion.p>
         </div>
 
@@ -92,9 +89,9 @@ export default function About() {
               key={c}
               className="rounded-full border px-[18px] py-2 text-[13px]"
               style={{
-                background: 'rgba(255,255,255,0.05)',
-                borderColor: 'rgba(255,255,255,0.1)',
-                color: 'rgba(255,255,255,0.6)',
+                background: 'var(--bb-pill-bg)',
+                borderColor: 'var(--bb-pill-border)',
+                color: 'var(--bb-soft)',
               }}
             >
               {c}

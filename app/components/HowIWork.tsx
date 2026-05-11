@@ -31,12 +31,9 @@ export default function HowIWork() {
   return (
     <section id="overview-detail" className="py-32 max-w-7xl mx-auto px-6 lg:px-12" ref={ref}>
       <div className="grid lg:grid-cols-2 gap-16 lg:gap-24 items-center">
-        {/* Left: orbital SVG */}
         <div className="flex justify-center">
           <OrbitalRings />
         </div>
-
-        {/* Right: steps */}
         <div className="space-y-14">
           {steps.map((step, i) => (
             <StepItem key={step.number} step={step} delay={i * 0.15} isInView={isInView} />
@@ -59,7 +56,7 @@ function StepItem({
   const ref = useRef(null)
   const stepInView = useInView(ref, { once: true, margin: '-60px' })
   const prefersReducedMotion = useReducedMotion()
-  const active = stepInView
+  const ease: [number, number, number, number] = [0.25, 0.1, 0.25, 1]
 
   return (
     <motion.div
@@ -69,9 +66,9 @@ function StepItem({
       transition={{ duration: 0.7, ease, delay }}
     >
       <p
-        className="text-xs font-medium mb-3 tracking-widest"
+        className="text-xs font-medium mb-3"
         style={{
-          color: active ? '#D4920A' : 'rgba(255,255,255,0.3)',
+          color: stepInView ? '#D4920A' : 'var(--bb-faint)',
           letterSpacing: '0.1em',
           fontSize: '12px',
           transition: 'color 0.4s ease',
@@ -81,11 +78,11 @@ function StepItem({
       </p>
       <h3
         className="text-xl font-semibold mb-3"
-        style={{ color: '#ffffff', letterSpacing: '-0.01em' }}
+        style={{ color: 'var(--bb-text)', letterSpacing: '-0.01em' }}
       >
         {step.title}
       </h3>
-      <p className="text-base leading-relaxed" style={{ color: '#AAAAAA' }}>
+      <p className="text-base leading-relaxed" style={{ color: 'var(--bb-muted)' }}>
         {step.body}
       </p>
     </motion.div>
@@ -102,20 +99,14 @@ function OrbitalRings() {
       aria-hidden="true"
       className="max-w-full"
     >
-      {/* Outer ring */}
-      <circle cx="200" cy="200" r="180" stroke="white" strokeWidth="1" opacity="0.07" />
-      {/* Middle ring */}
-      <circle cx="200" cy="200" r="120" stroke="white" strokeWidth="1" opacity="0.15" />
-      {/* Inner ring — amber */}
+      <circle cx="200" cy="200" r="180" stroke="var(--bb-text)" strokeWidth="1" opacity="0.07" />
+      <circle cx="200" cy="200" r="120" stroke="var(--bb-text)" strokeWidth="1" opacity="0.15" />
       <circle cx="200" cy="200" r="60" stroke="#D4920A" strokeWidth="1.5" opacity="0.7" />
-      {/* Centre dot */}
       <circle cx="200" cy="200" r="6" fill="#D4920A" opacity="0.8" />
-      {/* Orbit nodes */}
-      <circle cx="200" cy="20" r="4" fill="white" opacity="0.2" />
-      <circle cx="380" cy="200" r="4" fill="white" opacity="0.2" />
-      <circle cx="200" cy="380" r="4" fill="white" opacity="0.2" />
-      <circle cx="20" cy="200" r="4" fill="white" opacity="0.2" />
-      {/* Inner orbit nodes — amber */}
+      <circle cx="200" cy="20" r="4" fill="var(--bb-text)" opacity="0.2" />
+      <circle cx="380" cy="200" r="4" fill="var(--bb-text)" opacity="0.2" />
+      <circle cx="200" cy="380" r="4" fill="var(--bb-text)" opacity="0.2" />
+      <circle cx="20" cy="200" r="4" fill="var(--bb-text)" opacity="0.2" />
       <circle cx="200" cy="140" r="3" fill="#D4920A" opacity="0.5" />
       <circle cx="260" cy="200" r="3" fill="#D4920A" opacity="0.5" />
       <circle cx="200" cy="260" r="3" fill="#D4920A" opacity="0.5" />

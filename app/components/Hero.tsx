@@ -27,13 +27,17 @@ export default function Hero() {
     visible: {
       opacity: 1,
       y: 0,
-      transition: { duration: 0.7, ease: [0.25, 0.1, 0.25, 1] as [number,number,number,number] },
+      transition: { duration: 0.7, ease: [0.25, 0.1, 0.25, 1] as [number, number, number, number] },
     },
   }
 
   const fadeUp = {
     hidden: { opacity: 0, y: prefersReducedMotion ? 0 : 20 },
-    visible: { opacity: 1, y: 0, transition: { duration: 0.7, ease: [0.25, 0.1, 0.25, 1] as [number,number,number,number] } },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.7, ease: [0.25, 0.1, 0.25, 1] as [number, number, number, number] },
+    },
   }
 
   return (
@@ -42,13 +46,12 @@ export default function Hero() {
       className="relative min-h-screen flex items-center overflow-hidden"
       aria-label="Hero"
     >
-      {/* Geometric SVG background decoration */}
       <HeroBackground />
 
       <div className="relative z-10 w-full max-w-7xl mx-auto px-6 lg:px-12 pt-32 pb-24">
         <motion.p
-          className="text-sm font-medium mb-8 tracking-widest"
-          style={{ color: 'rgba(255,255,255,0.3)', letterSpacing: '0.1em' }}
+          className="text-sm font-medium mb-8"
+          style={{ color: 'var(--bb-faint)', letterSpacing: '0.1em' }}
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.8, delay: 0.1 }}
@@ -68,7 +71,7 @@ export default function Hero() {
               key={i}
               variants={wordVariants}
               className="inline-block mr-[0.2em]"
-              style={{ color: word.amber ? '#D4920A' : '#ffffff' }}
+              style={{ color: word.amber ? '#D4920A' : 'var(--bb-text)' }}
             >
               {word.text}
             </motion.span>
@@ -77,7 +80,7 @@ export default function Hero() {
 
         <motion.p
           className="text-base leading-relaxed mb-10 max-w-[520px]"
-          style={{ color: '#AAAAAA' }}
+          style={{ color: 'var(--bb-muted)' }}
           variants={fadeUp}
           initial="hidden"
           animate="visible"
@@ -102,8 +105,13 @@ export default function Hero() {
           </a>
           <a
             href="#what-i-do"
-            className="rounded-full border px-7 py-3 text-[15px] font-medium text-white hover:bg-white/5 transition-colors duration-200"
-            style={{ borderColor: 'rgba(255,255,255,0.25)' }}
+            className="rounded-full border px-7 py-3 text-[15px] font-medium transition-colors duration-200"
+            style={{
+              color: 'var(--bb-text)',
+              borderColor: 'var(--bb-border-ghost)',
+            }}
+            onMouseEnter={e => ((e.currentTarget as HTMLElement).style.background = 'var(--bb-pill-bg)')}
+            onMouseLeave={e => ((e.currentTarget as HTMLElement).style.background = 'transparent')}
           >
             See what I do
           </a>
@@ -137,7 +145,7 @@ function HeroBackground() {
           height={r.h}
           rx={r.rx}
           fill="none"
-          stroke="white"
+          stroke="var(--bb-text)"
           strokeWidth="1.5"
           opacity={r.opacity}
           transform={`rotate(${r.rotate}, ${r.x + r.w / 2}, ${r.y + r.h / 2})`}

@@ -18,13 +18,9 @@ function LinkedinIcon({ size = 20 }: { size?: number }) {
     <svg width={size} height={size} viewBox="0 0 24 24" fill="none" aria-hidden="true">
       <path
         d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"
-        stroke="currentColor"
-        strokeWidth="1.5"
-        strokeLinecap="round"
-        strokeLinejoin="round"
+        stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"
       />
-      <rect
-        x="2" y="9" width="4" height="12"
+      <rect x="2" y="9" width="4" height="12"
         stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"
       />
       <circle cx="4" cy="4" r="2" stroke="currentColor" strokeWidth="1.5" />
@@ -76,6 +72,7 @@ export default function WhatIDo() {
   const ref = useRef(null)
   const isInView = useInView(ref, { once: true, margin: '-100px' })
   const prefersReducedMotion = useReducedMotion()
+  const ease: [number, number, number, number] = [0.25, 0.1, 0.25, 1]
 
   const containerVariants = {
     hidden: {},
@@ -84,11 +81,7 @@ export default function WhatIDo() {
 
   const cardVariants = {
     hidden: { opacity: 0, y: prefersReducedMotion ? 0 : 40 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: { duration: 0.7, ease: [0.25, 0.1, 0.25, 1] as [number,number,number,number] },
-    },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.7, ease } },
   }
 
   return (
@@ -96,11 +89,11 @@ export default function WhatIDo() {
       <motion.div
         initial={{ opacity: 0, y: prefersReducedMotion ? 0 : 40 }}
         animate={isInView ? { opacity: 1, y: 0 } : {}}
-        transition={{ duration: 0.7, ease: [0.25, 0.1, 0.25, 1] as [number,number,number,number] }}
+        transition={{ duration: 0.7, ease }}
         className="mb-16"
       >
-        <h2 className="section-heading text-white mb-4">What I do</h2>
-        <p className="text-base" style={{ color: '#AAAAAA' }}>
+        <h2 className="section-heading mb-4" style={{ color: 'var(--bb-text)' }}>What I do</h2>
+        <p className="text-base" style={{ color: 'var(--bb-muted)' }}>
           Every engagement is different. Here&apos;s where I typically work.
         </p>
       </motion.div>
@@ -116,24 +109,26 @@ export default function WhatIDo() {
             key={service.title}
             id={service.id}
             variants={cardVariants}
-            className="rounded-2xl border p-7 hover:border-white/15 transition-colors duration-300"
+            className="rounded-2xl border p-7 transition-colors duration-300"
             style={{
-              background: '#222222',
-              borderColor: 'rgba(255,255,255,0.08)',
+              background: 'var(--bb-card)',
+              borderColor: 'var(--bb-border)',
             }}
+            onMouseEnter={e => ((e.currentTarget as HTMLElement).style.borderColor = 'var(--bb-border-strong)')}
+            onMouseLeave={e => ((e.currentTarget as HTMLElement).style.borderColor = 'var(--bb-border)')}
           >
             <div className="mb-4" style={{ color: '#D4920A' }}>
               <service.Icon size={20} strokeWidth={1.5} aria-hidden="true" />
             </div>
             <h3
               className="font-semibold mb-2"
-              style={{ fontSize: '17px', color: '#ffffff' }}
+              style={{ fontSize: '17px', color: 'var(--bb-text)' }}
             >
               {service.title}
             </h3>
             <p
               className="leading-relaxed"
-              style={{ fontSize: '14px', color: '#AAAAAA', lineHeight: '1.6' }}
+              style={{ fontSize: '14px', color: 'var(--bb-muted)', lineHeight: '1.6' }}
             >
               {service.description}
             </p>

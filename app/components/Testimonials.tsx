@@ -25,6 +25,7 @@ export default function Testimonials() {
   const ref = useRef(null)
   const isInView = useInView(ref, { once: true, margin: '-100px' })
   const prefersReducedMotion = useReducedMotion()
+  const ease: [number, number, number, number] = [0.25, 0.1, 0.25, 1]
 
   const containerVariants = {
     hidden: {},
@@ -33,11 +34,7 @@ export default function Testimonials() {
 
   const cardVariants = {
     hidden: { opacity: 0, y: prefersReducedMotion ? 0 : 40 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: { duration: 0.7, ease: [0.25, 0.1, 0.25, 1] as [number,number,number,number] },
-    },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.7, ease } },
   }
 
   return (
@@ -45,11 +42,11 @@ export default function Testimonials() {
       <motion.div
         initial={{ opacity: 0, y: prefersReducedMotion ? 0 : 40 }}
         animate={isInView ? { opacity: 1, y: 0 } : {}}
-        transition={{ duration: 0.7, ease: [0.25, 0.1, 0.25, 1] as [number,number,number,number] }}
+        transition={{ duration: 0.7, ease }}
         className="mb-16"
       >
-        <h2 className="section-heading text-white mb-4">What people say</h2>
-        <p className="text-base" style={{ color: '#AAAAAA' }}>
+        <h2 className="section-heading mb-4" style={{ color: 'var(--bb-text)' }}>What people say</h2>
+        <p className="text-base" style={{ color: 'var(--bb-muted)' }}>
           In their words, not mine.
         </p>
       </motion.div>
@@ -73,15 +70,12 @@ export default function Testimonials() {
                 fontFamily: 'var(--font-playfair), Georgia, serif',
                 fontStyle: 'italic',
                 fontSize: '15px',
-                color: '#ffffff',
+                color: 'var(--bb-text)',
               }}
             >
               &ldquo;{t.quote}&rdquo;
             </blockquote>
-            <figcaption
-              className="text-[13px]"
-              style={{ color: 'rgba(255,255,255,0.4)' }}
-            >
+            <figcaption className="text-[13px]" style={{ color: 'var(--bb-dim)' }}>
               {t.attribution}
             </figcaption>
           </motion.figure>

@@ -1,28 +1,92 @@
 @import "tailwindcss";
 
-@theme {
-  --color-bg-base: #1a1a1a;
-  --color-bg-card: #222222;
-  --color-bg-elevated: #2a2a2a;
-  --color-amber: #D4920A;
-  --color-amber-light: #E8A81C;
-  --color-amber-muted: #8A6010;
-  --font-sans: var(--font-inter), system-ui, sans-serif;
-  --font-serif: var(--font-playfair), Georgia, serif;
+/* ─── Design tokens ───────────────────────────────────────── */
+
+:root,
+[data-theme="dark"] {
+  --bb-bg:              #1a1a1a;
+  --bb-card:            #222222;
+  --bb-elevated:        #2a2a2a;
+  --bb-nav:             rgba(34,34,34,0.55);
+  --bb-nav-solid:       rgba(34,34,34,0.82);
+  --bb-text:            #ffffff;
+  --bb-muted:           #AAAAAA;
+  --bb-faint:           rgba(255,255,255,0.3);
+  --bb-dim:             rgba(255,255,255,0.4);
+  --bb-soft:            rgba(255,255,255,0.6);
+  --bb-border:          rgba(255,255,255,0.08);
+  --bb-border-md:       rgba(255,255,255,0.1);
+  --bb-border-strong:   rgba(255,255,255,0.15);
+  --bb-border-ghost:    rgba(255,255,255,0.25);
+  --bb-border-footer:   rgba(255,255,255,0.06);
+  --bb-pill-bg:         rgba(255,255,255,0.05);
+  --bb-pill-border:     rgba(255,255,255,0.1);
+  --bb-glow:            rgba(212,146,10,0.08);
+  --bb-svg-stroke:      255,255,255;
+  --bb-nav-link:        rgba(255,255,255,0.6);
+  --bb-nav-link-hover:  rgba(255,255,255,0.9);
+  --bb-input-bg:        #222222;
+  --bb-faq-q:           rgba(255,255,255,0.85);
+  --bb-toggle-icon:     rgba(255,255,255,0.7);
 }
+
+[data-theme="light"] {
+  --bb-bg:              #f5f4f0;
+  --bb-card:            #eceae5;
+  --bb-elevated:        #e3e1db;
+  --bb-nav:             rgba(245,244,240,0.6);
+  --bb-nav-solid:       rgba(245,244,240,0.92);
+  --bb-text:            #1a1a1a;
+  --bb-muted:           #5a5a5a;
+  --bb-faint:           rgba(0,0,0,0.35);
+  --bb-dim:             rgba(0,0,0,0.4);
+  --bb-soft:            rgba(0,0,0,0.55);
+  --bb-border:          rgba(0,0,0,0.08);
+  --bb-border-md:       rgba(0,0,0,0.1);
+  --bb-border-strong:   rgba(0,0,0,0.15);
+  --bb-border-ghost:    rgba(0,0,0,0.25);
+  --bb-border-footer:   rgba(0,0,0,0.08);
+  --bb-pill-bg:         rgba(0,0,0,0.04);
+  --bb-pill-border:     rgba(0,0,0,0.1);
+  --bb-glow:            rgba(212,146,10,0.06);
+  --bb-svg-stroke:      26,26,26;
+  --bb-nav-link:        rgba(0,0,0,0.55);
+  --bb-nav-link-hover:  rgba(0,0,0,0.85);
+  --bb-input-bg:        #eceae5;
+  --bb-faq-q:           rgba(0,0,0,0.8);
+  --bb-toggle-icon:     rgba(0,0,0,0.6);
+}
+
+/* ─── Tailwind theme mapping ──────────────────────────────── */
+
+@theme {
+  --color-bg-base:      var(--bb-bg);
+  --color-bg-card:      var(--bb-card);
+  --color-bg-elevated:  var(--bb-elevated);
+  --color-amber:        #D4920A;
+  --color-amber-light:  #E8A81C;
+  --color-amber-muted:  #8A6010;
+  --font-sans:          var(--font-inter), system-ui, sans-serif;
+  --font-serif:         var(--font-playfair), Georgia, serif;
+}
+
+/* ─── Base styles ─────────────────────────────────────────── */
 
 html {
   scroll-behavior: smooth;
 }
 
 body {
-  background-color: #1a1a1a;
-  color: #ffffff;
+  background-color: var(--bb-bg);
+  color: var(--bb-text);
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 ::selection {
   background: rgba(212, 146, 10, 0.3);
 }
+
+/* ─── Typography scale ────────────────────────────────────── */
 
 .hero-heading {
   font-size: clamp(52px, 7vw, 96px);

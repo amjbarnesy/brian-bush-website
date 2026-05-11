@@ -1,3 +1,5 @@
+'use client'
+
 const links = [
   { label: 'Overview', href: '#overview' },
   { label: 'What I do', href: '#what-i-do' },
@@ -10,10 +12,12 @@ export default function Footer() {
   return (
     <footer
       className="px-6 lg:px-12 py-6"
-      style={{ borderTop: '1px solid rgba(255,255,255,0.06)' }}
+      style={{ borderTop: '1px solid var(--bb-border-footer)' }}
     >
       <div className="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
-        <span className="text-[14px] font-medium text-white">Brian Bush</span>
+        <span className="text-[14px] font-medium" style={{ color: 'var(--bb-text)' }}>
+          Brian Bush
+        </span>
 
         <nav aria-label="Footer navigation">
           <ul className="flex flex-wrap items-center gap-5">
@@ -21,7 +25,10 @@ export default function Footer() {
               <li key={link.href}>
                 <a
                   href={link.href}
-                  className="text-[12px] text-white/35 hover:text-white/65 transition-colors duration-200"
+                  className="text-[12px] transition-colors duration-200"
+                  style={{ color: 'var(--bb-faint)' }}
+                  onMouseEnter={e => ((e.currentTarget as HTMLElement).style.color = 'var(--bb-muted)')}
+                  onMouseLeave={e => ((e.currentTarget as HTMLElement).style.color = 'var(--bb-faint)')}
                 >
                   {link.label}
                 </a>
@@ -30,7 +37,9 @@ export default function Footer() {
           </ul>
         </nav>
 
-        <span className="text-[12px] text-white/25">© 2026</span>
+        <span className="text-[12px]" style={{ color: 'var(--bb-faint)', opacity: 0.6 }}>
+          © 2026
+        </span>
       </div>
     </footer>
   )

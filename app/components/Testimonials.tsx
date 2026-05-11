@@ -11,7 +11,7 @@ const testimonials = [
   },
   {
     quote:
-      'He is a consummate joiner of dots — between people, organisations, or ideas. His network of businesses and business leaders is second to none.',
+      'He is a consummate joiner of dots, connecting people, organisations, and ideas. His network of businesses and business leaders is second to none.',
     attribution: 'Business connection client',
   },
   {
@@ -82,7 +82,7 @@ export default function Testimonials() {
               className="text-[13px]"
               style={{ color: 'rgba(255,255,255,0.4)' }}
             >
-              — {t.attribution}
+              {t.attribution}
             </figcaption>
           </motion.figure>
         ))}

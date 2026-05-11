@@ -7,7 +7,7 @@ const steps = [
   {
     number: '01',
     title: 'Relationships first',
-    body: 'Everything starts with Know / Like / Trust. If we don\'t have a genuine relationship that covers all three, we won\'t be working together — because without that foundation, real understanding isn\'t possible.',
+    body: 'Everything starts with Know, Like and Trust. If we don\'t have a genuine relationship that covers all three, we won\'t be working together. Without that foundation, real understanding simply isn\'t possible.',
   },
   {
     number: '02',
@@ -17,7 +17,7 @@ const steps = [
   {
     number: '03',
     title: 'Network as an asset',
-    body: 'A large, active global network built over decades. Warm introductions to the exact right people — built on trust that already exists.',
+    body: 'A large, active global network built over decades. Warm introductions to the exact right people, built on trust that already exists.',
   },
 ]
 

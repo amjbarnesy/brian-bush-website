@@ -7,12 +7,12 @@ const faqs = [
   {
     question: 'Who do you typically work with?',
     answer:
-      'Individuals and organisations of all sizes — from founders and sole traders to leadership teams and boards. The common thread is that they\'re serious about growth, open to challenge, and ready to commit to doing the work.',
+      'Individuals and organisations of all sizes, from founders and sole traders to leadership teams and boards. The common thread is that they are serious about growth, open to challenge, and ready to commit to doing the work.',
   },
   {
     question: 'How does coaching with you actually work?',
     answer:
-      'We start with a conversation — no charge, no agenda — to establish whether there\'s a genuine fit. If there is, we agree on what we\'re working towards, how often we meet, and how we\'ll measure progress. My approach is direct and human. It\'s never a generic programme.',
+      'We start with a conversation, no charge and no agenda, to establish whether there is a genuine fit. If there is, we agree on what we are working towards, how often we meet, and how we will measure progress. My approach is direct and human. It is never a generic programme.',
   },
   {
     question: 'What does "people connection" mean in practice?',
@@ -22,7 +22,7 @@ const faqs = [
   {
     question: 'Can you help with LinkedIn even if I already have a following?',
     answer:
-      'Yes — in fact this is often where the biggest gains are. Having a following and using LinkedIn strategically are two very different things. I work with individuals and boards to build credibility and create content that genuinely resonates.',
+      'Yes, and in fact this is often where the biggest gains are. Having a following and using LinkedIn strategically are two very different things. I work with individuals and boards to build credibility and create content that genuinely resonates.',
   },
   {
     question: 'Do you work outside Norfolk?',
@@ -32,7 +32,7 @@ const faqs = [
   {
     question: 'How do I know if we\'re a good fit?',
     answer:
-      'We have a conversation first. I won\'t take on work where I don\'t believe I can genuinely help — and I\'ll tell you that honestly. If I can\'t help you directly, I will almost certainly know someone who can. That\'s the whole point.',
+      'We have a conversation first. I won\'t take on work where I don\'t believe I can genuinely help, and I will tell you that honestly. If I can\'t help you directly, I will almost certainly know someone who can. That is the whole point.',
   },
 ]
 

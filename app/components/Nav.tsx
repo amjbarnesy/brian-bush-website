@@ -46,7 +46,7 @@ export default function Nav() {
           <a
             href="#"
             className="flex items-center justify-center rounded-full bg-bg-elevated px-4 py-2 shrink-0"
-            aria-label="Brian Bush — home"
+            aria-label="Brian Bush, return to top"
             onClick={closeMenu}
           >
             <BBMonogram />

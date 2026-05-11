@@ -61,7 +61,7 @@ export default function Contact() {
           style={{ color: '#AAAAAA' }}
           {...fadeUp(0.1)}
         >
-          I&apos;ll tell you honestly whether I can help — and if I can&apos;t, I&apos;ll know
+          I will tell you honestly whether I can help, and if I cannot, I will know
           someone who can.
         </motion.p>
 

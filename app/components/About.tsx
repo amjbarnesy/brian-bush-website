@@ -62,7 +62,7 @@ export default function About() {
             animate={animate}
             transition={{ duration: 0.7, ease, delay: 0.2 }}
           >
-            My career has never followed a straight line — and that is entirely intentional. From
+            My career has never followed a straight line, and that is entirely intentional. From
             selling ice cream at 16 to working at board level, every role and every sector has added
             to a deep understanding of what people need, what holds them back, and how to move them
             forward.
@@ -76,7 +76,7 @@ export default function About() {
             transition={{ duration: 0.7, ease, delay: 0.3 }}
           >
             I have developed a large and active global network over many years. Warm introductions,
-            trusted referrals, direct access to decision-makers — this is what separates a promising
+            trusted referrals, and direct access to decision-makers. This is what separates a promising
             idea from a real opportunity.
           </motion.p>
         </div>

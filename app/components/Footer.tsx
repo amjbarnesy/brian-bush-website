@@ -39,9 +39,25 @@ export default function Footer() {
           </ul>
         </nav>
 
-        <span className="text-[12px]" style={{ color: 'var(--bb-faint)', opacity: 0.6 }}>
-          © 2026
-        </span>
+        <div className="flex flex-col items-center sm:items-end gap-1">
+          <span className="text-[12px]" style={{ color: 'var(--bb-faint)', opacity: 0.6 }}>
+            © 2026
+          </span>
+          <span className="text-[11px]" style={{ color: 'var(--bb-faint)', opacity: 0.5 }}>
+            Designed & built by{' '}
+            <a
+              href="https://www.adambarnes.biz"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="transition-colors duration-200"
+              style={{ color: 'var(--bb-faint)' }}
+              onMouseEnter={e => ((e.currentTarget as HTMLElement).style.color = 'var(--bb-muted)')}
+              onMouseLeave={e => ((e.currentTarget as HTMLElement).style.color = 'var(--bb-faint)')}
+            >
+              Adam Barnes
+            </a>
+          </span>
+        </div>
       </div>
     </footer>
   )
